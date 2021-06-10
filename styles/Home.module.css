@@ -17,6 +17,10 @@
   align-items: center;
 }
 
+.title{
+  color: #1A52FB;
+}
+
 .footer {
   width: 100%;
   height: 100px;
