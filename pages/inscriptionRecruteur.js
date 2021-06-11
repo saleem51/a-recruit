@@ -6,16 +6,21 @@ import Link from 'next/link';
 
 export default function SignIn() {
     
+    let days = [];
     const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    const statut = ["Auto-entreprenur", "Sasu", "Sas", "Sarl", "Eurl"]
+    let years = [];
+    let daysIteration;
+
     return (
         <div className="SignDiv">
             <Head>
-                <title>Inscription a-recruit</title>
+                <title>Inscription  Recruteur a-recruit</title>
             </Head>
 
             <main>
                 <div className="row blocCcompte">
-                    <h2 className="center">Espace candidat</h2>
+                    <h2 className="center">Espace consultant</h2>
                     <div className="col-6 bloc mt-5 mb-3">
                         <h3 className="center">Créer votre compte</h3>
                         <form method="POST" className="signInBlock">
@@ -46,13 +51,7 @@ export default function SignIn() {
                             <div className="mb-3 row">
                                 <label for="birthDay" className="form-label">Date de Naissance</label>
                                     <select class="custom-select col m-2" id="Day">
-                                        {(() => {
-                                            let days = [];
-                                            for (let i=1; i<32; i++){
-                                                days.push(<option key={[i]}>{i}</option>)
-                                            }
-                                            return days
-                                        })()}
+                        
                                     </select> 
                                     <select class="custom-select col m-2" id="Month">
                                         {months.map(month => (
@@ -60,14 +59,19 @@ export default function SignIn() {
                                         ))}
                                     </select>
                                     <select class="custom-select col m-2" id="Year">
-                                        {(() => {
-                                            let years = [];
-                                            for (let i=2021; i>1899; i--){
-                                                years.push(<option key={[i]}>{i}</option>)
-                                            }
-                                            return years
-                                        })()}
+                                        <option>Année</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
                                     </select>
+                            </div>
+                            <div className="mb-3 row">
+                                <label for="status" className="form-label">Votre Statut</label>
+                                <select class="custom-select col m-2" id="Month">
+                                        {statut.map(statut => (
+                                            <option>{statut}</option>
+                                        ))}
+                                </select>
                             </div>
                             <div className="row">
                             <div class="col mb-3">
@@ -88,11 +92,9 @@ export default function SignIn() {
                             </div>
                         </form>
                     </div>
-                    <Link href="/connexion"><a className="center">Déjà inscrit ? connectez-vous</a></Link>
+                    <Link href="/connexionRecruteur"><a className="center">Déjà inscrit ? connectez-vous</a></Link>
                 </div>
             </main>
         </div>
     );
 }
-
-// years > 2003 ? years.push(<div className="form-text error">Vous devez êtrer majeur pour vous inscrire</div>) : '';
