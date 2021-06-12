@@ -16,3 +16,9 @@ margin-right: auto;
 h3,label, .file{
     color: #FFF;
 }
+
+.inputs::placeholder{
+    font-size: 12px;
+    color:rgb(164, 125, 232);
+    
+}

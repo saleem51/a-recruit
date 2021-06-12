@@ -16,7 +16,7 @@ export default function Connect() {
             <main>
                 <div className="row blocCcompte">
                     <h2 className="center">Espace candidat</h2>
-                    <div className="col-6 bloc mt-5 mb-3">
+                    <div className="col col-sm-8 col-md-8  col-lg-8 col-xl-6 bloc mt-5 mb-3">
                         <h3 className="center">Connexion</h3>
                         <form method="POST" className="signInBlock">
                             <div className="mb-3">
