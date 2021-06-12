@@ -83,8 +83,12 @@ export default function SignIn() {
                                 </div>
                             </div>
                             </div>
+                            <div className="file">
+                                <label for="CV"class="col-form-label">Insérer votre CV</label> 
+                                <input clzssName="file" type="file"></input>
+                            </div>
                             <div className="center">
-                                <button type="submit" className="btn btn-primary mt-4 mb-4">Inscription</button>
+                                <button  type="submit" className="btn btn-primary mt-4 mb-4">Inscription</button>
                             </div>
                         </form>
                     </div>

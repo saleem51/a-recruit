@@ -12,3 +12,7 @@ margin-right: auto;
 .center{
     text-align: center;
 }
+
+h3,label, .file{
+    color: #FFF;
+}
