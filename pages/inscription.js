@@ -22,19 +22,19 @@ export default function SignIn() {
                             <div className="row">
                             <div className="mb-3 col">
                                 <label for="LastName" className="form-label">Nom</label>
-                                <input type="text" className="form-control inputs" name="nom" placeholder="Nom"></input>
-                                <div className="form-text"></div>
+                                <input id="inputName" type="text" className="form-control inputs" name="nom" placeholder="Nom" pattern="[a-zâäàéèùêëîïôöçñA-Z-\s]" required></input>
+                                <div id="dangerAlert"className="form-text"></div>
                             </div>
                             <div className="mb-3 col">
                                 <label for="FirstName" className="form-label">Prénom</label>
-                                <input type="text" className="form-control inputs" name="nom" placeholder="Prénom"></input>
+                                <input type="text" className="form-control inputs" name="nom" placeholder="Prénom" pattern="[a-zâäàéèùêëîïôöçñA-Z-0-9\s]" required></input>
                                 <div className="form-text"></div>
                             </div>
                             </div>
                             <div className="row">
                                 <div className="mb-3 col">
                                     <label for="email" className="form-label">e-mail</label>
-                                    <input type="email" className="form-control inputs" name="email" placeholder="e-mail"></input>
+                                    <input type="email" className="form-control inputs" name="email" placeholder="e-mail" pattern="[a-zâäàéèùêëîïôöçñA-Z0-9.-_]+[@]{1}[a-zA_Z0-9.-_]+[.]{1}[a-z]{2,4}" required></input>
                                     <div className="form-text"></div>
                                 </div>
                                 <div className="mb-3 col">
@@ -73,19 +73,19 @@ export default function SignIn() {
                             <div class="col mb-3">
                                 <label for="password" class="col-form-label">Mot de passe</label>
                                 <div class="col">
-                                    <input type="password" name="password" class="form-control" placeholder="Mot de passe"></input>
+                                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})"></input>
                                 </div>
                             </div>
                             <div class="col mb-3">
                                 <label for="passwordConfirm" class="col-form-label">Confirmation</label>
                                 <div class="col">
-                                    <input type="password" name="passwordConfirm" class="form-control" placeholder="Confirmez mot de passe"></input>
+                                    <input type="password" name="passwordConfirm" class="form-control" placeholder="Confirmez mot de passe" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})"></input>
                                 </div>
                             </div>
                             </div>
                             <div className="file">
                                 <label for="CV"class="col-form-label">Insérer votre CV</label> 
-                                <input clzssName="file" type="file"></input>
+                                <input clzssName="file" type="file" required></input>
                             </div>
                             <div className="center">
                                 <button  type="submit" className="btn btn-primary mt-4 mb-4">Inscription</button>
