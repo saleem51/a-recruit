@@ -31,7 +31,7 @@ export default function Connect() {
                                 </div>
                             </div>
                             <div className="center">
-                                <button type="submit" className="btn btn-primary mt-4 mb-4">Connexion</button>
+                                <button type="submit" className="btn btn-success mt-4 mb-4">Connexion</button>
                             </div>
                         </form>
                     </div>

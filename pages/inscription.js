@@ -17,12 +17,12 @@ export default function SignIn() {
                 <div className="row blocCcompte">
                     <h2 className="center">Espace candidat</h2>
                     <div className="col col-sm-8 col-md-8  col-lg-8 col-xl-6 bloc mt-5 mb-3">
-                        <h3 className="center">Créer votre compte</h3>
+                        <h3 className="center mb-4">Créer votre compte</h3> 
                         <form method="POST" className="signInBlock">
                             <div className="row">
                             <div className="mb-3 col">
-                                <label for="LastName" className="form-label">Nom</label>
-                                <input id="inputName" type="text" className="form-control inputs" name="nom" placeholder="Nom" pattern="[a-zâäàéèùêëîïôöçñA-Z-\s]" required></input>
+                                <label for="LastName" className=" form-label">Nom</label>
+                                <input id="inputName" type="text" className=" form-control inputs" name="nom" placeholder="Nom" pattern="[a-zâäàéèùêëîïôöçñA-Z-\s]" required></input>
                                 <div id="dangerAlert"className="form-text"></div>
                             </div>
                             <div className="mb-3 col">
@@ -56,7 +56,7 @@ export default function SignIn() {
                                     </select> 
                                     <select class="custom-select col m-2" id="Month">
                                         {months.map(month => (
-                                            <option>{month}</option>
+                                            <option key={month}>{month}</option>
                                         ))}
                                     </select>
                                     <select class="custom-select col m-2" id="Year">
@@ -88,7 +88,7 @@ export default function SignIn() {
                                 <input clzssName="file" type="file" required></input>
                             </div>
                             <div className="center">
-                                <button  type="submit" className="btn btn-primary mt-4 mb-4">Inscription</button>
+                                <button  type="submit" className="btn btn-success mt-4 mb-4">Inscription</button>
                             </div>
                         </form>
                     </div>

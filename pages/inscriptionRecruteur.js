@@ -6,12 +6,9 @@ import Link from 'next/link';
 
 export default function SignIn() {
     
-    let days = [];
+  
     const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-    const statut = ["Auto-entreprenur", "Sasu", "Sas", "Sarl", "Eurl"]
-    let years = [];
-    let daysIteration;
-
+    const formJu = ["Sas", "Auto-entrepreneur", "Sasu", "Sarl", "Eurl"];
     return (
         <div className="SignDiv">
             <Head>
@@ -51,27 +48,36 @@ export default function SignIn() {
                             <div className="mb-3 row">
                                 <label for="birthDay" className="form-label">Date de Naissance</label>
                                     <select class="custom-select col m-2" id="Day">
-                        
+                                        {(() => {
+                                            let days = [];
+                                            for (let i=1; i<32; i++){
+                                                days.push(<option key={[i]}>{i}</option>)
+                                            }
+                                            return days
+                                        })()}
                                     </select> 
                                     <select class="custom-select col m-2" id="Month">
                                         {months.map(month => (
-                                            <option>{month}</option>
+                                            <option key={month}>{month}</option>
                                         ))}
                                     </select>
                                     <select class="custom-select col m-2" id="Year">
-                                        <option>Année</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
+                                        {(() => {
+                                            let years = [];
+                                            for (let i=2021; i>1899; i--){
+                                                years.push(<option key={[i]}>{i}</option>)
+                                            }
+                                            return years
+                                        })()}
                                     </select>
-                            </div>
-                            <div className="mb-3 row">
-                                <label for="status" className="form-label">Votre Statut</label>
-                                <select class="custom-select col m-2" id="Month">
-                                        {statut.map(statut => (
-                                            <option>{statut}</option>
-                                        ))}
-                                </select>
+                                    <div className="mb-3 row">
+                                    <label for="formJuridique" className="form-label">Forme Juridique</label>
+                                        <select class="custom-select col m-2" id="Month">
+                                            {formJu.map(formJu => (
+                                                <option key={formJu}>{formJu}</option>
+                                            ))}
+                                        </select>
+                                    </div>
                             </div>
                             <div className="row">
                             <div class="col mb-3">
@@ -88,7 +94,7 @@ export default function SignIn() {
                             </div>
                             </div>
                             <div className="center">
-                                <button type="submit" className="btn btn-primary mt-4 mb-4">Inscription</button>
+                                <button type="submit" className="btn btn-success mt-4 mb-4">Inscription</button>
                             </div>
                         </form>
                     </div>
